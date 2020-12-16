@@ -1,0 +1,189 @@
+<html>
+<head>
+<style>
+.bg-image { 
+  background-image: url('p6.jpg');
+filter: blur(8px);
+height: 100%; 
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.bg-text {
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4); 
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 2px;
+  
+}
+
+label{
+font-size:25;
+color:black;
+}
+.x{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    width: 80%;
+}
+legend{
+font-family:sans-serif;
+}
+</style>
+<script>
+function formValidation()
+{
+var finame=document.registration.fname;
+    var ue=document.registration.email;
+    var pno=document.registration.phn;
+	if(letter1(finame))
+	{
+		if(phonenum(pno))
+			{
+				if(validemail(ue))
+				{
+				return true;
+				}
+			}
+	}
+	return false;
+}
+function letter1(finame)
+{
+var letters=/^[A-Za-z]+$/;
+if(finame.value.match(letters))
+{
+return true;
+}
+else
+{
+window.alert('fname should have alphabets only');
+
+return false;
+}
+}
+function validemail(ue)
+{
+var mail=/^\w+@\w+\.[a-zA-Z]{2,3}+$/;
+if(ue.value.match(mail))
+{
+return true;
+}
+else
+{
+window.alert('invalid email');
+
+return false;
+}
+}
+function phonenum(pno)
+{
+var plen=pno.value.length;
+if(plen<10 || plen>10)
+{
+window.alert('invalid num');
+
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<div class="bg-image"></div>
+<div class="bg-text">
+<form name="registration" onsubmit="return formValidation();" action="thankyou.html" method="get">
+<fieldset><legend>Detials</legend>
+<label>Name:</label>
+<input type="text" placeholder="enter your name" required><br><br>
+<label>Gender:</label>
+<input type="radio" value="Male">Male
+<input type="radio" value="Female">Female
+<input type="radio" value="Others">Others<br><br>
+<label>Phone no:</label>
+<input type="number" required><br><br>
+<label>Email:</label>
+<input type="email"style="width: 200px;" required><br><br>
+</fieldset><br>
+<fieldset>
+<legend>Covid Detials</legend>
+<label>Blood group:</label>
+<select required>
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="AB+">AB+</option>
+<option value="AB-">AB-</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option>
+</select><br><br>
+<label>Age:</label>
+<input type="text" required><br><br>
+<label>Positive Date:</label>
+<input type="date" required>&emsp;&emsp;
+<label>Negative date:</label>
+<input type="date" required><br><br>
+<label>Weight:</label>
+<input type="number" name="wgt" required><br><br>
+<label>Other Diseases<i>(If Any)</i>:</label>
+<input type="text" class="x">
+</fieldset><br>
+<fieldset><legend>Address</legend>
+<label>State:</label>
+<input type="text" required>&emsp;&emsp;&emsp;
+<label>District:</label>
+<select>
+<option value="">Adilabad</option>
+<option value="">Bhadradri Kothagudem</option>
+<option value="">Hyderabad</option>
+<option value="">Jagital</option>
+<option value="">Jangaon</option>
+<option value="">Jayashankar Bhupalpally</option>
+<option value="">Gadwal</option>
+<option value="">Kamareddy</option>
+<option value="">Karimnagar</option>
+<option value="">Khammam</option>
+<option value="">Mahububabad</option>
+<option value="">Mahbubnagar</option>
+<option value="">Mancherial</option>
+<option value="">Medak</option>
+<option value="">Medchal</option>
+<option value="">Mulugu</option>
+<option value="">Nagarkurnool</option>
+<option value="">Nalgonda</option>
+<option value="">Narayanpet</option>
+<option value="">Nirmal</option>
+<option value="">Nizamabad</option>
+<option value="">Pedapally</option>
+<option value="">Rangareddy</option>
+<option value="">Sangareddy</option>
+<option value="">Suryapet</option>
+<option value="">Siddipet</option>
+<option value="">Rajanna Siricilla</option>
+<option value="">Vikarabad</option>
+<option value="">Wanaparthy</option>
+<option value="">Warangal rural</option>
+<option value="">Warangal urban</option>
+<option value="">Yadadri Bhuvangiri</option>
+</select><br><br>
+<label>City:</label>
+<input type="text" required><br><br>
+<label>Residential Address:</label>
+&emsp;<input type="text" class="x">&emsp;&emsp;
+</fieldset><br>
+<input type="submit" value="Submit" style="width: 100px; height:50px; font-size:20px; background-color:green; " >&emsp;
+<input type="reset" value="Reset" style="width: 100px; height:50px; font-size:20px; background-color:green;">
+</form>
+</div>
+</body>
+</html>
