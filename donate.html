@@ -43,15 +43,19 @@ font-family:sans-serif;
 function formValidation()
 {
 var finame=document.registration.fname;
-    var ue=document.registration.email;
-    var pno=document.registration.phn;
+var ue=document.registration.email;
+var pno=document.registration.phn;
+var wt=document.registration.weight;
 	if(letter1(finame))
 	{
 		if(phonenum(pno))
 			{
 				if(validemail(ue))
 				{
-				return true;
+					if(postwt(wt))
+					{
+						return true;
+					}
 				}
 			}
 	}
@@ -95,6 +99,14 @@ window.alert('invalid num');
 return false;
 }
 return true;
+}
+function postwt(wt)
+{	var w=wt.value;
+	if(w<=0)
+	{
+		window.alert('invalid weight');
+		return false;
+	}
 }
 </script>
 </head>
