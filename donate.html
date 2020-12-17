@@ -45,17 +45,13 @@ function formValidation()
 var finame=document.registration.fname;
 var ue=document.registration.email;
 var pno=document.registration.phn;
-var wt=document.registration.weight;
 	if(letter1(finame))
 	{
 		if(phonenum(pno))
 			{
 				if(validemail(ue))
 				{
-					if(postwt(wt))
-					{
-						return true;
-					}
+					return true;
 				}
 			}
 	}
@@ -100,14 +96,6 @@ return false;
 }
 return true;
 }
-function postwt(wt)
-{
-	if(w<=0)
-	{
-		window.alert('invalid weight');
-		return false;
-	}
-}
 </script>
 </head>
 <body>
@@ -122,7 +110,7 @@ function postwt(wt)
 <input type="radio" value="Female">Female
 <input type="radio" value="Others">Others<br><br>
 <label>Phone no:</label>&nbsp;
-<input type="text" required><br><br>
+<input type="number" required><br><br>
 <label>Email:</label>&nbsp;
 <input type="email"style="width: 200px;" required><br><br>
 </fieldset><br>
@@ -146,7 +134,7 @@ function postwt(wt)
 <label>Negative date:</label>&nbsp;
 <input type="date" required><br><br>
 <label>Weight:</label>&nbsp;
-<input type="text" name="wgt" required><br><br>
+<input type="number" name="wgt" required><br><br>
 <label>Other Diseases<i>(If Any)</i>:</label>
 <input type="text" class="x">
 </fieldset><br>
